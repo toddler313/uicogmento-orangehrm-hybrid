@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="OrangeHRM Local Run" parallel="tests" thread-count="3">
+
+    <listeners>
+        <listener class-name="actions.reportConfig.AllureTestListener"/>
+    </listeners>
+
+    <parameter name="environmentType" value="orange"></parameter>
+    <parameter name="runTestsIn" value="docker"></parameter>
+
+    <test name="Run on Chrome" preserve-order="true">
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="platformName" value="windows"/>
+        <parameter name="ipAddress" value="localhost"/>
+        <parameter name="portNumber" value="4444"/>
+        <classes>
+            <class name="testcases.orangehrm.admin.Admin_PIM"></class>
+            <class name="testcases.orangehrm.admin.Admin_Job_Management"></class>
+        </classes>
+    </test>
+
+<!--    <test name="Run on Firefox" preserve-order="true">-->
+<!--        <parameter name="browserName" value="firefox"/>-->
+<!--        <parameter name="platformName" value="windows"/>-->
+<!--        <parameter name="ipAddress" value="192.168.2.116"/>-->
+<!--        <parameter name="portNumber" value="4444"/>-->
+<!--        <classes>-->
+<!--&lt;!&ndash;            <class name="testcases.orangehrm.admin.Admin_PIM"></class>&ndash;&gt;-->
+<!--            <class name="testcases.orangehrm.admin.Admin_Job_Management"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Run on Edge" preserve-order="true">
+        <parameter name="browserName" value="msedge"/>
+        <parameter name="platformName" value="windows"/>
+        <parameter name="ipAddress" value="localhost"/>
+        <parameter name="portNumber" value="4444"/>
+        <classes>
+            <class name="testcases.orangehrm.admin.Admin_PIM"></class>
+            <class name="testcases.orangehrm.admin.Admin_Job_Management"></class>
+        </classes>
+    </test>
+
+
+</suite>
