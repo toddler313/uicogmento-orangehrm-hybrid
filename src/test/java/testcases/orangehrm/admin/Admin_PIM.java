@@ -58,8 +58,7 @@ public class Admin_PIM extends BaseTest {
 
     @AfterClass
     public void tearDown() {
-//        closeBrowserDriver();
-        driver.quit();
+        closeBrowserDriver();
     }
 
 //    @Test

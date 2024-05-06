@@ -151,7 +151,6 @@ public class Admin_Job_Management extends BaseTest {
 
     @AfterClass(alwaysRun = true)
     public void tearDown() {
-//        closeBrowserDriver();
-        driver.quit();
+        closeBrowserDriver();
     }
 }
