@@ -126,7 +126,7 @@ public class Admin_Job_Management extends BaseTest {
         log.info("TC_01_Admin_Create_Job_Title 20- Verify created Job Title in list: " + jobTitle);
         Assert.assertTrue(adminListJobTitlesPage.getRecentCreatedJobTitle(jobTitle).isDisplayed());
 
-        log.info("TC_01_Admin_Create_Job_Title 21- Verify Description of the job: " + jobDescription.substring(0, 20) + "...");
+        log.info("TC_01_Admin_Create_Job_Title 21- Verify Description of the job: " + jobDescription);
         Assert.assertEquals(adminListJobTitlesPage.getRecentCreatedJobDescription(jobTitle), jobDescription);
 
         log.info("TC_01_Admin_Create_Job_Title 21- Verify new job recorded in backend");
@@ -151,6 +151,7 @@ public class Admin_Job_Management extends BaseTest {
 
     @AfterClass(alwaysRun = true)
     public void tearDown() {
-        closeBrowserDriver();
+//        closeBrowserDriver();
+        driver.quit();
     }
 }
